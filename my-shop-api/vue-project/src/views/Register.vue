@@ -1,7 +1,7 @@
 <template>
 <div class="register-container">
     <h1>S'inscrire</h1>
-    <p class="register_subtile"> j'ai deja un compte,<RouterLink to="/Login"> me connecter </RouterLink></p>
+    <p class="register_subtile"> J'ai déjà un compte,<RouterLink to="/login"> Me connecter </RouterLink></p>
     <form class="register-form" @submit.prevent="register">
       <label for="username">Nom d'utilisateur:</label>
       <input v-model="username" type="text" id="username" required>
@@ -56,7 +56,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
   background-color: white;
   width: 100vw;
 }
@@ -69,7 +69,7 @@ export default {
   background-color: #d1cfcf;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 16px; 
+  margin-top: 16px;
 }
 label {
   display: block;

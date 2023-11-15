@@ -1,13 +1,16 @@
 <template>
- <div class="login-container">
+  <div class="login-container">
     <h1 class="login_title">Connexion</h1>
-    <p class="login_subtile">Tu n'as pas encore de compte ? <RouterLink to="/Register">Créer un compte</RouterLink></p>
+    <p class="login_subtile">
+      Tu n'as pas encore de compte ?
+      <RouterLink to="/register">Créer un compte</RouterLink>
+    </p>
     <form class="login-form" @submit.prevent="login">
       <label for="username">Nom d'utilisateur:</label>
-      <input v-model="username" type="text" id="username" required>
+      <input v-model="username" type="text" id="username" required />
 
       <label for="password">Mot de passe:</label>
-      <input v-model="password" type="password" id="password" required>
+      <input v-model="password" type="password" id="password" required />
 
       <button type="submit">Se connecter</button>
     </form>
@@ -15,33 +18,32 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import { RouterLink } from "vue-router";
 
 export default {
+  components: {
+    RouterLink,
+  },
   data() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     };
   },
   methods: {
     async login() {
       try {
-        
-        const response = await axios.post('URL_DE_VOTRE_API/login', {
+        const response = await axios.post("URL_DE_VOTRE_API/login", {
           username: this.username,
           password: this.password,
         });
 
-        
-        console.log('Connexion réussie', response.data);
-
-        
+        console.log("Connexion réussie", response.data);
       } catch (error) {
-        console.error('Erreur de connexion', error);
+        console.error("Erreur de connexion", error);
       }
     },
-
   },
 };
 </script>
@@ -49,16 +51,16 @@ export default {
 <style>
 .login-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color:white;
-  width : 100vw ;
+  height: 50vh;
+  background-color: white;
+  width: 100vw;
 }
 
 .login-form {
-  width: 100%; 
+  width: 100%;
   max-width: 400px;
   padding: 20px;
   border: 1px solid #a4a0a0;
@@ -88,9 +90,9 @@ button {
   cursor: pointer;
 }
 h1 {
-    color: black;
+  color: black;
 }
 p {
-    color: black;
+  color: black;
 }
 </style>
