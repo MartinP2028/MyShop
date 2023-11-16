@@ -54,8 +54,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  background-color: white;
+  height: 60vh;
   width: 100vw;
 }
 
