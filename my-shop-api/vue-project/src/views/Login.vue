@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import axios from "axios";
 import { RouterLink } from "vue-router";
 
@@ -55,6 +55,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 60vh;
+  background-color: white;
   width: 100vw;
 }
 
