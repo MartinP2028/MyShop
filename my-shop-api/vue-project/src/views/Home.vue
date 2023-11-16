@@ -1,6 +1,8 @@
 <template>
-  <p>{{ getProducts.data["hydra:member"] }}</p>
-  <RouterView />
+  <section class="home">
+    <p>{{ getProducts.data["hydra:member"] }}</p>
+    <RouterView />
+  </section>
 </template>
 
 <script>

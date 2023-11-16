@@ -1,20 +1,22 @@
 <template>
-  <div class="login-container">
-    <h1 class="login_title">Connexion</h1>
-    <p class="login_subtile">
-      Tu n'as pas encore de compte ?
-      <RouterLink to="/register">Créer un compte</RouterLink>
-    </p>
-    <form class="login-form" @submit.prevent="login">
-      <label for="username">Nom d'utilisateur:</label>
-      <input v-model="username" type="text" id="username" required />
+  <section class="login">
+    <div class="login-container">
+      <h1 class="login_title">Connexion</h1>
+      <p class="login_subtile">
+        Tu n'as pas encore de compte ?
+        <RouterLink to="/register">Créer un compte</RouterLink>
+      </p>
+      <form class="login-form" @submit.prevent="login">
+        <label for="username">Nom d'utilisateur:</label>
+        <input v-model="username" type="text" id="username" required />
 
-      <label for="password">Mot de passe:</label>
-      <input v-model="password" type="password" id="password" required />
+        <label for="password">Mot de passe:</label>
+        <input v-model="password" type="password" id="password" required />
 
-      <button type="submit">Se connecter</button>
-    </form>
-  </div>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script scoped>
