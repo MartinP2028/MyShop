@@ -1,6 +1,9 @@
 <template>
-  <section class="home">
-    <div class="grid-container">
+  <main class="home">
+    <div
+      class="grid-container"
+      v-if="getProducts.data && getProducts.data['hydra:member']"
+    >
       <section class="grid-item">
         <p class="filter-by">FILTER BY</p>
         <ul class="filtrebar">
@@ -44,11 +47,12 @@
         </div>
       </section>
       <ProductList
+        class="grid-item"
         v-for="product in getProducts.data['hydra:member']"
         :product="product"
       />
     </div>
-  </section>
+  </main>
 </template>
 
 <script>
