@@ -21,29 +21,29 @@
 
 <script scoped>
 import axios from "axios";
-import { RouterLink } from "vue-router";
 
 export default {
-  components: {
-    RouterLink,
-  },
   data() {
     return {
       username: "",
       password: "",
+      error: null, 
     };
   },
   methods: {
     async login() {
       try {
-        const response = await axios.post("URL_DE_VOTRE_API/login", {
+        const response = await axios.post("http://localhost/authenticaton_token", {
           username: this.username,
           password: this.password,
         });
 
         console.log("Connexion réussie", response.data);
+        this.$router.push({ name: 'products' });
       } catch (error) {
         console.error("Erreur de connexion", error);
+
+        this.error = "Identifiants invalides. Veuillez réessayer.";
       }
     },
   },
