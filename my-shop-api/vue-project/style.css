@@ -21,6 +21,23 @@ body #app {
   margin-left: 20px;
 }
 
+.hamburger {
+  display: none;
+  overflow-x: hidden;
+  width: 0%;
+  left: 0;
+  top: 0;
+  color: white;
+  position: fixed;
+  height: 100%;
+  background-color: #1b1b1b;
+  z-index: 100;
+}
+
+.hamburger.is-active {
+  width: 100%;
+}
+
 .div_header {
   display: flex;
 }
@@ -105,6 +122,133 @@ input {
 }
 
 /* FIN NAVBAR */
+
+.price-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.range-slider {
+  width: 100%;
+  position: relative;
+  margin: 15px 0 30px 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  border: 0;
+  width: 100%;
+  position: absolute;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-image: url(img/sercle.svg);
+  background-color: #fff;
+  cursor: pointer;
+  margin-top: -5px;
+  position: relative;
+  z-index: 1;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  border: none;
+}
+
+/* GRID PARAMETERS */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 10px;
+}
+
+.filter-by {
+  font-family: "Avenir", sans-serif;
+  color: #919296;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.arrow {
+  width: 20px;
+  size: 20px;
+}
+
+.filtrebar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.filter {
+  font-size: 14px;
+  font-family: "Avenir", sans-serif;
+  padding-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 4px;
+  margin: 0;
+}
+
+.plus-item-cart {
+  width: 30px;
+  float: right;
+}
+
+.left-part {
+  padding: 5%;
+  float: left;
+}
+
+.right-part {
+  padding: 5%;
+  float: right;
+}
+
+.stars {
+  width: 60px;
+}
+
+.price {
+  font-family: "Avenir", sans-serif;
+}
+
+.furniture-type {
+  font-size: 10px;
+  font-family: "Avenir", sans-serif;
+  color: #919296;
+}
+
+.furniture-name {
+  font-size: 16px;
+  font-family: "Avenir", sans-serif;
+  color: #1b1b1b;
+}
+
+.furniture-image {
+  width: 100%;
+  border: #1b1b1b 1px solid;
+}
+
+/* END OF GRID PARAMETERS */
 
 /* FOOTER */
 

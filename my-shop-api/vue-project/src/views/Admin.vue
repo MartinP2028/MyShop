@@ -10,6 +10,7 @@
       <h1>
         <a class="title" href="#">Users</a>
       </h1>
+        <button @click="open()" class="add">Add Product</button>
     </div>
     <div class="product-grid">
       <div class="product-grid-name">
