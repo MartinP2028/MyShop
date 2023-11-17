@@ -6,8 +6,7 @@
     >
       <div class="titles">
         <h1>
-          <button class="title">Products
-          </button>
+          <button class="title">Products</button>
         </h1>
         <h1>
           <button class="title">Categories</button>
@@ -72,12 +71,14 @@ export default {
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDAyMzA5NjgsImV4cCI6MTcwMDIzNDU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6Im1hcnRpbi5waW5hdWRAZXBpdGVjaC5kaWdpdGFsIn0.l3j7BwoeB0lGXm4BMHR8orZEMRmVK-rKr2CzJkr6ASmibWnk2HH2OdMv0Tb2phF1FfgpHpRRHLJvWCalBNFcOGlKJEwOhT65Se0OlXeWXit27CY38aDLkPVpFG6yOwUKyfnLqcrGPMGS4lSQ9zdB_RXkwEbURK1-Z5gkfIJblG8FKq318aNQMdZn5PWslzOMXWwK2jjP_MPOR-mq-fs6SRJfEWlx384SIGXjAhOTpi4PfQfpRAQyOR9uzRHdTioTbwsJBKrmDByfJ-qFrRkUilfxlYxACYMC8wEVzFUTjLxHXSC1ah-D0cX4llrOymdiJhSM4FU4NTkV2XtZv95-3A",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDAyNDc5ODYsImV4cCI6MTcwMDI1MTU4Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6Im1hcnRpbi5waW5hdWRAZXBpdGVjaC5kaWdpdGFsIn0.Zt_tVpgTztUxKw0qyu4ilgWCwa4E41-TgPaGvbH9FmlDVGApyz_6LJuGWXwnNDD7DBybxfSXXCCCqW10Ij3WloVowrmww1kn4PUae_g514b9PEJIxLFOsjsPrpYDSXMVT92x1B1LZdzP7Ag51D5YTQNTJ3Sz3zLJdrbu7bM8fyNI-uOr65iEa8sDQXo9DQeEvRr6OGD3DYgK_kqYCtPos0SJBH6ekPR0-AZxP9Z8j7qPwa8py4sVQNNOTFiYbcC2JDonPMDFTk1m3quNbNsTCcckVCDqYHj4SSo4rZBvchzDPWQ42ZlUXBTiryBS-w7DRGZu-Zs7JytvCfW0TDbrmw",
           "Content-Type": "application/json",
         },
       };
       fetch("http://localhost/api/products/" + id, requestOptions).then(
-        () => this.products
+        () => this.products,
+        document.location = "http://localhost:5173/",
+        location.reload()
       );
     },
     addItem() {

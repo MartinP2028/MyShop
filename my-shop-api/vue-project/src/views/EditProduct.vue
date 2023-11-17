@@ -25,7 +25,7 @@ export default {
   methods: {
     async add() {
       const requestOptions = {
-        method: "POST",
+        method: "PUT",
         headers: {
           Authorization:
             "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDAyNDc5ODYsImV4cCI6MTcwMDI1MTU4Niwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6Im1hcnRpbi5waW5hdWRAZXBpdGVjaC5kaWdpdGFsIn0.Zt_tVpgTztUxKw0qyu4ilgWCwa4E41-TgPaGvbH9FmlDVGApyz_6LJuGWXwnNDD7DBybxfSXXCCCqW10Ij3WloVowrmww1kn4PUae_g514b9PEJIxLFOsjsPrpYDSXMVT92x1B1LZdzP7Ag51D5YTQNTJ3Sz3zLJdrbu7bM8fyNI-uOr65iEa8sDQXo9DQeEvRr6OGD3DYgK_kqYCtPos0SJBH6ekPR0-AZxP9Z8j7qPwa8py4sVQNNOTFiYbcC2JDonPMDFTk1m3quNbNsTCcckVCDqYHj4SSo4rZBvchzDPWQ42ZlUXBTiryBS-w7DRGZu-Zs7JytvCfW0TDbrmw",
@@ -40,7 +40,7 @@ export default {
       };
       fetch("http://localhost/api/products", requestOptions).then(
         () => console.log("Product added test"),
-        document.location = "http://localhost:5173/",
+        document.location = "http://localhost:5173",
         location.reload()
       );
     },

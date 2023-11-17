@@ -7,8 +7,8 @@
         <RouterLink to="/register">Créer un compte</RouterLink>
       </p>
       <form class="login-form" @submit.prevent="login">
-        <label for="username">Nom d'utilisateur:</label>
-        <input v-model="username" type="text" id="username" required />
+        <label for="username">E-mail</label>
+        <input v-model="email" type="text" id="username" required />
 
         <label for="password">Mot de passe:</label>
         <input v-model="password" type="password" id="password" required />
@@ -20,29 +20,39 @@
 </template>
 
 <script scoped>
-import axios from "axios";
+import router from "../router";
 
 export default {
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
-      error: null, 
+      error: null,
     };
   },
   methods: {
-    async login() {
+    async login(email, password) {
       try {
-        const response = await axios.post("http://localhost/authenticaton_token", {
-          username: this.username,
-          password: this.password,
+        const response = await fetch("http://localhost/authentication_token", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: this.email,
+            password: this.password,
+          }),
         });
 
-        console.log("Connexion réussie", response.data);
-        this.$router.push({ name: 'products' });
-      } catch (error) {
-        console.error("Erreur de connexion", error);
+        if (!response.ok) {
+          throw new Error("Erreur de connexion");
+        }
 
+        const data = await response.json();
+        console.log("Connexion réussie", data);
+        this.$router.push({ name: "home" });
+      } catch (error) {
+        console.error(error);
         this.error = "Identifiants invalides. Veuillez réessayer.";
       }
     },
