@@ -1,5 +1,5 @@
 <template>
-  <section class="grid-item">
+  <section>
     <img
       src="../../img/white_color.png"
       class="furniture-image"
